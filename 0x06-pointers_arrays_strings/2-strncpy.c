@@ -2,17 +2,21 @@
   *_strncpy - copies a string
   *@dest: destnation of string
   *@src: source string
-  *@n: limiter of character copied
+  *@n: number of bytes allocated to dest string
+  *if src < dest fill with 0 bytesd
   *Return: copied string from source
   */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
-	char lc;
+	int i = 0;
 
-	lc = src[n];
+	while (*(src + i) != '\0' && i < n)
+	{
+		dest[i] = *(src + i);
+		i++;
+	}
+	for (; i < n; i++)
+		dest[i] = '\0';
 
-	for (i = 0; src[i] < lc; i++)
-		dest[i] = src[i];
 	return (dest);
 }
