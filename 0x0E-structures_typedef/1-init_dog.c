@@ -1,0 +1,15 @@
+/**
+  *init_dog - function to initialize a structure variable
+  *@name: name parameter
+  *@age: age parameter
+  *@owner: owner parameter
+  *@d: pointer to variable dog of type struct dog
+  */
+#include <stdio.h>
+#include "dog.h"
+void init_dog(struct dog *d, char *name, float age, char *owner)
+{
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
+}
