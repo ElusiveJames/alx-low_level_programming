@@ -4,21 +4,19 @@
   *Return: no of nodes
   */
 #include "lists.h"
-
 size_t print_list(const list_t *h)
 {
-	size_t count = 0;
-	const list_t *ptr;
+	size_t count;
 
-	ptr = h;
-	while (ptr != NULL)
+	count = 0;
+	while (h != NULL)
 	{
-		count++;
-		if (ptr->str == NULL)
+		if (h->str == NULL)
 			printf("[%d] %s\n", 0, "(nil)");
 		else
-			printf("[%d] %s\n ", ptr->len, ptr->str);
-		ptr = ptr->next;
+			printf("[%d] %s\n", h->len, h->str);
+		h = h->next;
+		count++;
 	}
 	return (count);
 }
