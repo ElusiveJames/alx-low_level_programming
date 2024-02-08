@@ -1,5 +1,5 @@
 /**
- * delete_nodeint_at_index - deletes a node 
+ * delete_nodeint_at_index - deletes a node
  * @head: pointer to  list
  * @index: index of the node to delete
  *
