@@ -7,7 +7,11 @@
 #include "main.h"
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int x = n >> index;
+	int x;
+
+	if (index > 63)
+		return (-1);
+	x = n >> index;
 
 	if (x & 1)
 		return (1);
