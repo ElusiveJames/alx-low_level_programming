@@ -14,15 +14,19 @@ char *_strstr(char *haystack, char *needle)
 		haystack_len++;
 	while (needle[needle_len] != '\0')
 		needle_len++;
-	for (i = 0; i < haystack_len; i++)
+	if (needle_len != 0)
 	{
-		for (j = 0; j < needle_len; j++)
+		for (i = 0; i < haystack_len; i++)
 		{
-			if (haystack[i + j] != needle[j])
-				break;
-			if (needle[j + 1] == '\0')
-				return (haystack + i);
+			for (j = 0; j < needle_len; j++)
+			{
+				if (haystack[i + j] != needle[j])
+					break;
+				if (needle[j + 1] == '\0')
+					return (haystack + i);
+			}
 		}
+		return (NULL);
 	}
 	return (NULL);
 }
