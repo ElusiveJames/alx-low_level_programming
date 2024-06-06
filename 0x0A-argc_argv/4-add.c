@@ -10,20 +10,24 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum = 0, digit;
+	int i, sum = 0;
+	long int digit;
 
-	if (argc == 1)
+	if (argc < 3)
 		printf("%d\n", 0);
-	if (argc > 1)
+	else
 	{
-		for (i = 1; i < argc; i++)
+		for(i = 1; i < argc; i++)
 		{
-			digit = isdigit(*(argv[i]));
-			if (digit != 0)
-				sum += atoi(argv[i]);
+			char *endptr;
+			digit = strtol(argv[i], &endptr, 10);
+			if (*endptr == '\0')
+				sum += digit;
 			else
 				printf("Error\n");
-			}
+		}
+		
+		return (0);
 	}
 	printf("%d\n", sum);
 	return (0);
