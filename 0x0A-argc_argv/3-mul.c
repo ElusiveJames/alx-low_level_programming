@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 {
 	int mult;
 	(void)argc;
-	
 	mult = atoi(argv[1]) * atoi(argv[2]);
 	printf("%d\n", mult);
 	return (0);
