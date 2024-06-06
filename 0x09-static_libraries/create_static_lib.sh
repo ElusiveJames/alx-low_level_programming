@@ -1,2 +1,4 @@
 #!/bin/bash
-ar rc liball.a *.c | cut -d '.' -f1
+gcc -c *.c
+ar  rc liball.a *.o
+
