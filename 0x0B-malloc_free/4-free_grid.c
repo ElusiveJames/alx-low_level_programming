@@ -5,12 +5,15 @@
   */
 #include "main.h"
 #include <stdlib.h>
+/* free by row*/
 void free_grid(int **grid, int height)
 {
-	if (grid != NULL && height != 0)
+	int i;
+
+	if (grid != NULL && height > 0)
 	{
-		for (; height >= 0; height--)
-			free(grid[height]);
+		for (i = 0; i < height; i++)
+			free(grid[i]);
 		free(grid);
 	}
 }
