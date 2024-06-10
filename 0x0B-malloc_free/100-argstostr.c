@@ -38,7 +38,7 @@ char *argstostr(int ac, char **av)
 	{
 		if (i > 1)/*add a space bettwen the strings*/
 		{
-			str[buff_idex++] = ' ';
+			str[buff_idex++] = '\n';
 		}
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
