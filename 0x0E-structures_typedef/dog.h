@@ -7,6 +7,7 @@
   *@owner: who own the dog
   */
   #include <stdio.h>
+  #include <string.h>
 typedef struct dog
 {
 	char *name;
