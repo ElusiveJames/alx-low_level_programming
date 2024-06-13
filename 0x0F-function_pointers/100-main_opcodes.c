@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int i;
-	void *pt_to_main;
+	unsigned char *pt_to_main;
 	unsigned char *opcode_ptr;
 
 	if (argc != 2)
@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 		return (2);
 	}
 
-	pt_to_main = (void *)&main;
+	pt_to_main = (char *)main;
 	opcode_ptr = (unsigned char *)pt_to_main;
 
 	for (i = 0; i < bytes; i++)
-		printf("%02" PRIx8, opcode_ptr[i]);
+		printf("%02x", opcode_ptr[i]);
 	printf("\n");
 }
