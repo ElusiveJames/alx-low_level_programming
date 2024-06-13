@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 	opcode_ptr = (unsigned char *)pt_to_main;
 
 	for (i = 0; i < bytes; i++)
-		printf("%02" PRIx8, opcode_ptr[i]);
+	{
+    	printf("%02" PRIx8, opcode_ptr[bytes - 1 - i]);
+	}
 	printf("\n");
 }
